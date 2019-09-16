@@ -31,11 +31,36 @@ var data = [
 
 // your code goes here
 
+var sum = 0;
+function sumDogAge() {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].type == 'dog') {
+      sum += data[i].age * 7;
+    }
+  }
+}
+
+sumDogAge(); // 105
+
 // Solution is 105
+
 
 // Write the same function using
 // 1. filter - for filtering the cat or dog
 // 2. map - to multiply human year to dog year
 // 3. reduce - to accumulate total age.
+
+// Solution 105
+
+function sumDogAge() {
+  var typeDog = data.filter(element => element.type == 'dog');
+  var dogYear = typeDog.map(element => element.age * 7);
+  var sum = dogYear.reduce((x, y) => x + y);
+
+  return sum;
+}
+
+sumDogAge();
+
 
 // Solution 105
